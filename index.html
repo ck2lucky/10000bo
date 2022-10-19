@@ -53,6 +53,8 @@
 		<div id="ball" class="ball">ball</div>
 	</div>
 
+	<div id="counter"></div>
+
 
 	<script type="text/javascript">
 		function init(){
@@ -60,7 +62,10 @@
 			var dataContainerOrientation = document.getElementById('dataContainerOrientation');
 			var dataContainerMotion = document.getElementById('dataContainerMotion');
 			var ball = document.getElementById("ball");
-			var garden = document.getElementById("garden")
+			var garden = document.getElementById("garden");
+			
+			var i = 0;
+			var counter = document.getElementById("counter")
 
 			var maxX = garden.clientWidth * 2 - ball.clientWidth;
 			var maxY = garden.clientHeight * 2- ball.clientHeight;
@@ -101,6 +106,8 @@
 					//var r = event.accelerationIncludingGravity.r;
 					var html = "x: " +x+ "<br>y: "+y+ "<br>z: " +z;
 					dataContainerMotion.innerHTML = html;
+					
+					counter.innerHTML = i++;
 				}, true);
 			}
 
